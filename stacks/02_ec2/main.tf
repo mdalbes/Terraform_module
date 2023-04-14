@@ -88,7 +88,7 @@ resource "aws_security_group" "allow_tls" {
   ingress {
     from_port   = 22
     to_port     = 22
-    protocol    = "udp"
+    protocol    = "tcp"
     cidr_blocks = [module.variables.myIP,module.variables.public_subnets[0],module.variables.public_subnets[1]]
   }
 

@@ -37,4 +37,9 @@ How to use module in Terraform, here is an example of a VPC with VPC flowlogs ac
 - 1°) connect through ssh to instance 1, and try to ping / nmap / ssh to Instance2 
 - ssh -i "mdalbes-instance.pem" ubuntu@x.x.x.x
 
-# Generate logs between Instances
+# Onboard Account in Prisma
+- ...
+- ...
+
+# Tests
+- network from vpc.flow_record where dest.ip = $IPinstance2
