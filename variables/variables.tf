@@ -42,6 +42,42 @@ output "dynamodb_name" {
   value = var.dynamodb_name
 }
 
+#############################################################
+####################   Instances   ##########################
+#############################################################
+
+variable "key_name" {
+  description = "Name of the Instance keyname"
+  type        = string
+  default     = "mdalbes-instance"
+}
+
+output "key_name" {
+  value = var.key_name
+}
+
+
+
+variable "filename" {
+  description = "pem Path"
+  type        = string
+  default     = "C:\\Users\\mdalbes\\Desktop\\repo\\Terraform_module\\mdalbes-instance.pem"
+}
+
+output "filename" {
+  value = var.filename
+}
+
+variable "myIP" {
+  description = "myIP"
+  type        = string
+  default     = "90.55.196.49/32"
+}
+
+output "myIP" {
+  value = var.myIP
+}
+
 
 #############################################################
 ######################   VPC   ##############################
@@ -95,6 +131,9 @@ output "log_group_name" {
 }
 
 
+
+
+
 #############################################################
 ####################   SUBNETS   ############################
 #############################################################
@@ -139,42 +178,3 @@ variable "public_subnet_name" {
 output "public_subnet_name" {
   value = var.public_subnet_name
 }
-
-
-
-#############################################################
-####################   Instances   ##########################
-#############################################################
-
-variable "key_name" {
-  description = "Name of the Instance keyname"
-  type        = string
-  default     = "mdalbes-instance"
-}
-
-output "key_name" {
-  value = var.key_name
-}
-
-
-
-variable "filename" {
-  description = "pem Path"
-  type        = string
-  default     = "C:\\Users\\mdalbes\\Desktop\\repo\\Terraform_module\\mdalbes-instance.pem"
-}
-
-output "filename" {
-  value = var.filename
-}
-
-variable "myIP" {
-  description = "myIP"
-  type        = string
-  default     = "35.181.28.86/32"
-}
-
-output "myIP" {
-  value = var.myIP
-}
-

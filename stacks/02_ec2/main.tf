@@ -63,17 +63,40 @@ resource "local_file" "ssh_key" {
   content  = tls_private_key.instance.private_key_pem
 }
 
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic"
-  vpc_id      = data.aws_vpc.myVPC.id
+locals {
+  ports_in = [
+    443,
+    22
+  ]
+  ports_out = [
+    0
+  ]
+}
 
-  ingress {
-    description = "TLS from VPC"
+resource "aws_security_group" "allow_tls" {
+  name        = "allow_tls_ssh"
+  description = "Allow TLS & SSH inbound traffic"
+  vpc_id      = data.aws_vpc.myVPC.id
+  
+   ingress {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [module.variables.myIP,module.variables.public_subnets[0]]
+    cidr_blocks = [module.variables.myIP,module.variables.public_subnets[0],module.variables.public_subnets[1]]
+  }
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "udp"
+    cidr_blocks = [module.variables.myIP,module.variables.public_subnets[0],module.variables.public_subnets[1]]
+  }
+
+   ingress {
+    from_port   = -1
+    to_port     = -1
+    protocol    = "icmp"
+    cidr_blocks = [module.variables.myIP,module.variables.public_subnets[0],module.variables.public_subnets[1]]
   }
 
   egress {
@@ -83,10 +106,7 @@ resource "aws_security_group" "allow_tls" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name = "allow_tls"
   }
-}
 
 #Instance 1 
 module "instance_1" {
