@@ -3,4 +3,4 @@ How to use module in Terraform, here is an example of a VPC with VPC flowlogs ac
 
 
 # Design
-![Screenshot](Terraform module Design.drawio.png)
+![Screenshot](terraform_module_design.drawio.png)
