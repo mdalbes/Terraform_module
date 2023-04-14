@@ -14,13 +14,3 @@ module "remote_state" {
   dynamodb_name              = module.variables.dynamodb_name
   region                     = module.variables.region
 }
-
-
-# terraform {
-#   backend "s3" {
-#     bucket   = "tfstate-bucket-log-bucket"
-#     key      = "terraform.tfstate"
-#     region   = "us-east-1"
-
-#   }
-# }
