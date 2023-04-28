@@ -31,6 +31,7 @@ output "iam_role" {
 }
 
 
+
 resource "prismacloud_cloud_account_v2" "aws_account_onboarding" {
     disable_on_destroy = true
     aws {

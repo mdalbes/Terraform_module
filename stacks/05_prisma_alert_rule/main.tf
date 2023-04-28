@@ -25,18 +25,25 @@ provider "prismacloud" {
     json_config_file = "prismacloud_auth.json"
 }
 
+
+data "prismacloud_account_group" "existing_account_group_id" {
+    name = module.variables.existing_account_group_name_1 // Change the account group name, if you already have an account group that you wish to map the account. 
+}
+
+
 resource "prismacloud_alert_rule" "alert_rule_1" {
     name = "mdalbes-non-web-port-open-alert"
     description = "Made by Terraform"
+    allow_auto_remediate = false
+    # enabled = "true"
+    # scan_all = true
     target  {
-        account_groups = [module.variables.existing_account_group_name_1]
-        # resource_list  {
-        #   compute_access_group_ids = ["Sockshop"]
-        # }
+        account_groups = [data.prismacloud_account_group.existing_account_group_id.group_id]
     }
     policies = [module.variables.policy_name]
     notification_config  {
-        config_type = "email"  
+        config_type = "email" 
+        recipients = ["mdalbes@paloaltonetworks.com"]
     }
 }
 
