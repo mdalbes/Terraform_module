@@ -5,7 +5,7 @@ module "variables" {
 
 terraform {
   backend "s3" {
-    bucket   = "tfstate-bucket-mdalbes-1"
+    bucket   = "tfstate-bucket-mdalbes"
     key      = "tfstate/terraform.tfstate-prisma-alert-rule"
     region   = "us-east-1"
 
