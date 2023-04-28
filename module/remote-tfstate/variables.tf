@@ -13,11 +13,6 @@ variable "region" {
   description = "Region to deploy"
 }
 
-variable "acl" {
-  type        = string
-  description = "The canned ACL to apply to the S3 bucket"
-  default     = "private"
-}
 
 variable "read_capacity" {
   type        = string

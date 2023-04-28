@@ -46,10 +46,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
   }
 }
 
-resource "aws_s3_bucket_acl" "tfstate_bucket_acl" {
-  bucket = aws_s3_bucket.tfstate_bucket.id
-  acl    = var.acl
-}
+
 resource "aws_s3_bucket_public_access_block" "default" {
   bucket                  = aws_s3_bucket.tfstate_bucket.id
   block_public_acls       = var.block_public_acls

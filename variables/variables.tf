@@ -178,3 +178,45 @@ variable "public_subnet_name" {
 output "public_subnet_name" {
   value = var.public_subnet_name
 }
+
+
+
+#############################################################
+####################   Prisma    ############################
+#############################################################
+
+
+#######   Account ID 1     ########
+
+
+variable "aws_account_id_1" {
+  type = string
+  default = "661676943050"
+}
+output "aws_account_id_1" {
+  value = var.aws_account_id_1
+}
+
+variable "prisma_account_name_1" {
+  type = string
+  default = "mdalbes-terraform-account-prisma-11"
+}
+output "prisma_account_name_1" {
+  value = var.prisma_account_name_1
+}
+
+variable "existing_account_group_name_1" {
+  type = string
+  default = "mdalbes-acg-lab"
+}
+output "existing_account_group_name_1" {
+  value = var.existing_account_group_name_1
+}
+
+variable "policy_name" {
+  type = string
+  default = "Non web port open (= different from  80 & 443)"
+}
+output "policy_name" {
+  value = var.policy_name
+}
