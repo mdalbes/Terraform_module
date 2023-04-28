@@ -33,13 +33,27 @@ How to use module in Terraform, here is an example of a VPC with VPC flowlogs ac
 - terraform plan 
 - terraform apply -auto-approve
 
-# Generate logs between Instances
-- 1°) connect through ssh to instance 1, and try to ping / nmap / ssh to Instance2 
-- ssh -i "mdalbes-instance.pem" ubuntu@x.x.x.x
 
-# Onboard Account in Prisma
-- ...
-- ...
+ 4°) Prisma Onboard account
+- modify variables into variables/variables.tf ##Prisma##
+- cd ../03_prisma_onboard_account
+- terraform init
+- terraform plan 
+- terraform apply -auto-approve
+
+ 5°) Prisma New policy
+- cd ../04_prisma_new_policy
+- terraform init
+- terraform plan 
+- terraform apply -auto-approve
+
+ 6°) Prisma Alert rule
+- cd ../05_prisma_prisma_alert_rule
+- terraform init
+- terraform plan 
+- terraform apply -auto-approve
+
+==>  "Error: 403/https://api.prismacloud.io/alert/rule Error(msg:incomplete_account_group_access severity:error subject:)" with System Admin Access
 
 # Tests
 - network from vpc.flow_record where dest.ip = $IPinstance2

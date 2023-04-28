@@ -28,7 +28,7 @@ provider "prismacloud" {
 
 resource "prismacloud_rql_search" "query_non_web_open" {
     search_type = "config"
-    query = "config from cloud.resource where cloud.account = '${module.variables.prisma_account_name_1}' and api.name = 'aws-ec2-describe-security-groups' AND json.rule = ipPermissions[*].toPort is not member of (443,80)"
+    query = "config from cloud.resource where cloud.account = '${module.variables.prisma_aws_account_name_1}' and api.name = 'aws-ec2-describe-security-groups' AND json.rule = ipPermissions[*].toPort is not member of (443,80)"
     time_range {
         relative {
             unit = "day"

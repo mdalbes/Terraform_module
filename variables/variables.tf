@@ -197,12 +197,12 @@ output "aws_account_id_1" {
   value = var.aws_account_id_1
 }
 
-variable "prisma_account_name_1" {
+variable "prisma_aws_account_name_1" {
   type = string
   default = "mdalbes-terraform-account-prisma-11"
 }
-output "prisma_account_name_1" {
-  value = var.prisma_account_name_1
+output "prisma_aws_account_name_1" {
+  value = var.prisma_aws_account_name_1
 }
 
 variable "existing_account_group_name_1" {
