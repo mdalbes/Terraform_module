@@ -33,6 +33,8 @@ override.tf.json
 
 # ignore *.pem
 *.pem
+private_key.pem
+
 
 # ignore *.pem
 *.hcl

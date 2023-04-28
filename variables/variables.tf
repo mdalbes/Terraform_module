@@ -25,7 +25,7 @@ output "username" {
 
 variable "tfstate_bucket_name" {
   type    = string
-  default = "tfstate-bucket-mdalbes-1"
+  default = "tfstate-bucket-mdalbes"
 }
 
 output "tfstate_bucket_name" {
@@ -35,7 +35,7 @@ output "tfstate_bucket_name" {
 
 variable "dynamodb_name" {
   type    = string
-  default = "tfstate-dynamodb-mdalbes-1"
+  default = "tfstate-dynamodb-mdalbes"
 }
 
 output "dynamodb_name" {
@@ -191,7 +191,7 @@ output "public_subnet_name" {
 
 variable "aws_account_id_1" {
   type = string
-  default = "661676943050"
+  default = "854772877803"
 }
 output "aws_account_id_1" {
   value = var.aws_account_id_1
@@ -199,7 +199,7 @@ output "aws_account_id_1" {
 
 variable "prisma_aws_account_name_1" {
   type = string
-  default = "mdalbes-terraform-account-prisma-11"
+  default = "mdalbes-terraform-account-prisma-2"
 }
 output "prisma_aws_account_name_1" {
   value = var.prisma_aws_account_name_1

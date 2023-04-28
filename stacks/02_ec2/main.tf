@@ -10,7 +10,7 @@ provider aws {
 
 terraform {
   backend "s3" {
-    bucket   = "tfstate-bucket-mdalbes-1"
+    bucket   = "tfstate-bucket-mdalbes"
     key      = "tfstate/terraform.tfstate-ec2"
     region   = "us-east-1"
 
