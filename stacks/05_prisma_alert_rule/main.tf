@@ -31,16 +31,19 @@ data "prismacloud_account_group" "existing_account_group_id" {
 }
 
 
+data "prismacloud_policy" "non_web" {
+    name = module.variables.policy_name
+}
+
 resource "prismacloud_alert_rule" "alert_rule_1" {
     name = "mdalbes-non-web-port-open-alert"
     description = "Made by Terraform"
     allow_auto_remediate = false
-    # enabled = "true"
-    # scan_all = true
+    policies = ["${data.prismacloud_policy.non_web.policy_id}"]
     target  {
         account_groups = [data.prismacloud_account_group.existing_account_group_id.group_id]
     }
-    policies = [module.variables.policy_name]
+    
     notification_config  {
         config_type = "email" 
         recipients = ["mdalbes@paloaltonetworks.com"]

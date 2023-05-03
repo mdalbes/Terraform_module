@@ -2,8 +2,11 @@
 How to use module in Terraform, here is an example of a VPC with VPC flowlogs activated and 2 EC2 Instances
 
 
-# Design
+# Design AWS
 ![Screenshot](terraform_module_design.drawio.png)
+
+# Design Prisma
+![Screenshot](prisma_design.drawio.png)
 
 # Requirements
 - 1°)Install Terraform
@@ -56,7 +59,3 @@ How to use module in Terraform, here is an example of a VPC with VPC flowlogs ac
 - terraform plan 
 - terraform apply -auto-approve
 
-==>  "Error: 403/https://api.prismacloud.io/alert/rule Error(msg:incomplete_account_group_access severity:error subject:)" with System Admin Access
-
-# Tests
-- network from vpc.flow_record where dest.ip = $IPinstance2

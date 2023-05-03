@@ -12,7 +12,15 @@ variable "aws_account_id" {
 
 
 variable "existing_account_group_name" {
-  description = "Account group Name"
+  description = "Existing Account group Name"
   type        = string
   default     = "Default Account Group"
 }
+
+
+variable "new_account_group_name" {
+  description = "New Account group Name"
+  type        = string
+  default     = "Default Account Group"
+}
+

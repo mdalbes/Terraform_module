@@ -191,7 +191,7 @@ output "public_subnet_name" {
 
 variable "aws_account_id_1" {
   type = string
-  default = "854772877803"
+  default = "871988193069"
 }
 output "aws_account_id_1" {
   value = var.aws_account_id_1
@@ -199,7 +199,7 @@ output "aws_account_id_1" {
 
 variable "prisma_aws_account_name_1" {
   type = string
-  default = "mdalbes-terraform-account-prisma-2"
+  default = "mdalbes-terraform-account-prisma-4"
 }
 output "prisma_aws_account_name_1" {
   value = var.prisma_aws_account_name_1
@@ -209,13 +209,24 @@ variable "existing_account_group_name_1" {
   type = string
   default = "mdalbes-acg-lab"
 }
+
+
 output "existing_account_group_name_1" {
   value = var.existing_account_group_name_1
 }
 
+variable "new_account_group_name_1" {
+  type = string
+  default = "mdalbes-acg-lab-1-4"
+}
+
+output "new_account_group_name_1" {
+  value = var.new_account_group_name_1
+}
+
 variable "policy_name" {
   type = string
-  default = "Non web port open (= different from  80 & 443)"
+  default = "Non_web_port_open_mdalbes"
 }
 output "policy_name" {
   value = var.policy_name

@@ -38,7 +38,7 @@ resource "prismacloud_rql_search" "query_non_web_open" {
 }
 
 resource "prismacloud_saved_search" "saved_query_non_web_open" {
-    name = "saved query non web"
+    name = "saved query non web 4"
     description = "made by terraform"
     search_id = prismacloud_rql_search.query_non_web_open.search_id
     query = prismacloud_rql_search.query_non_web_open.query
@@ -54,7 +54,7 @@ resource "prismacloud_policy" "policy_non_web_open" {
     name = module.variables.policy_name
     cloud_type  = "aws"
     policy_type = "config"
-    severity    = "critical"
+    severity    = "high"
     rule {
         name = "non-web-rule"
         rule_type = "Config"
