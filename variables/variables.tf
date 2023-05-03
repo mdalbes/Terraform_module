@@ -191,7 +191,7 @@ output "public_subnet_name" {
 
 variable "aws_account_id_1" {
   type = string
-  default = "871988193069"
+  default = "158640107909"
 }
 output "aws_account_id_1" {
   value = var.aws_account_id_1
@@ -199,7 +199,7 @@ output "aws_account_id_1" {
 
 variable "prisma_aws_account_name_1" {
   type = string
-  default = "mdalbes-terraform-account-prisma-4"
+  default = "mdalbes-terraform-account-prisma-44"
 }
 output "prisma_aws_account_name_1" {
   value = var.prisma_aws_account_name_1
@@ -207,7 +207,7 @@ output "prisma_aws_account_name_1" {
 
 variable "existing_account_group_name_1" {
   type = string
-  default = "mdalbes-acg-lab"
+  default = "mdalbes-acg-lab-1-44"
 }
 
 
@@ -217,17 +217,116 @@ output "existing_account_group_name_1" {
 
 variable "new_account_group_name_1" {
   type = string
-  default = "mdalbes-acg-lab-1-4"
+  default = "mdalbes-acg-lab-1-44"
 }
 
 output "new_account_group_name_1" {
   value = var.new_account_group_name_1
 }
 
-variable "policy_name" {
+
+#######   Policy 1     ########
+
+
+variable "policy_name_1" {
   type = string
-  default = "Non_web_port_open_mdalbes"
+  default = "policy_non_web_port_open_mdalbes-44"
 }
-output "policy_name" {
-  value = var.policy_name
+output "policy_name_1" {
+  value = var.policy_name_1
 }
+
+variable "rule_name_1" {
+  type = string
+  default = "rule_non_web_port_open_mdalbes-44"
+}
+output "rule_name_1" {
+  value = var.rule_name_1
+}
+
+
+variable "search_type_1" {
+  type = string
+  default = "config"
+}
+output "search_type_1" {
+  value = var.search_type_1
+}
+
+variable "savedsearch_name_1" {
+  type = string
+  default = "saved query non web 4"
+}
+output "savedsearch_name_1" {
+  value = var.savedsearch_name_1
+
+}
+
+variable "unit_1" {
+  type = string
+  default = "day"
+}
+output "unit_1" {
+  value = var.unit_1
+
+}
+
+variable "amount_1" {
+  type = string
+  default = "7"
+}
+output "amount_1" {
+  value = var.amount_1
+
+}
+
+variable "policy_type_1" {
+  type = string
+  default = "config"
+}
+output "policy_type_1" {
+  value = var.policy_type_1
+
+}
+
+variable "rule_type_1" {
+  type = string
+  default = "Config"
+}
+output "rule_type_1" {
+  value = var.rule_type_1
+
+}
+
+
+#######   Alert 1     ########
+
+variable "alert_rule_name_1" {
+  type = string
+  default =  "mdalbes-non-web-port-open-alert"
+}
+output "alert_rule_name_1" {
+  value = var.alert_rule_name_1
+
+}
+
+
+variable "notification_config_type" {
+  type = string
+  default =  "email"
+}
+output "notification_config_type" {
+  value = var.notification_config_type
+
+}
+
+variable "notification_recipients" {
+  type = list(string)
+  default =  ["mdalbes@paloaltonetworks.com"]
+}
+output "notification_recipients" {
+  value = var.notification_recipients
+
+}
+
+

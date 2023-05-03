@@ -26,28 +26,13 @@ provider "prismacloud" {
 }
 
 
-data "prismacloud_account_group" "existing_account_group_id" {
-    name = module.variables.existing_account_group_name_1 // Change the account group name, if you already have an account group that you wish to map the account. 
-}
-
-
-data "prismacloud_policy" "non_web" {
-    name = module.variables.policy_name
-}
-
-resource "prismacloud_alert_rule" "alert_rule_1" {
-    name = "mdalbes-non-web-port-open-alert"
-    description = "Made by Terraform"
-    allow_auto_remediate = false
-    policies = ["${data.prismacloud_policy.non_web.policy_id}"]
-    target  {
-        account_groups = [data.prismacloud_account_group.existing_account_group_id.group_id]
-    }
-    
-    notification_config  {
-        config_type = "email" 
-        recipients = ["mdalbes@paloaltonetworks.com"]
-    }
+module "policy_1" {
+  source            = "../../module/prisma_alert"
+  policy_name                    = module.variables.policy_name_1
+  existing_account_group_name    = module.variables.existing_account_group_name_1
+  alert_rule_name                = module.variables.alert_rule_name_1 
+  notification_config_type       = module.variables.notification_config_type
+  notification_recipients        = module.variables.notification_recipients
 }
 
 
